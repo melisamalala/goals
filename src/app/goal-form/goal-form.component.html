@@ -1,14 +1,15 @@
 <div class="container-fluid">
   <div class="row">
-    <form>
+    <form #goalForm='ngForm'>
       <div class="form-group">
-
         <label for="name">Name</label>
-        <input type="text" required class="form-control" id="name">
-
+        <input type="text" required class="form-control" id="name" [(ngModel)]="newGoal.name" name="name" #name="ngModel" required>
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          <p> Name is Required</p>
+        </div>
+        Display {{newGoal.name}}
       </div>
       <div class="form-group">
-
         <label for="description">Description</label>
         <textarea class="form-control" id="description" rows="4" required></textarea>
 
@@ -18,6 +19,7 @@
         <input type='date' id="complete" required>
 
       </div>
+      <button type="submit" class="btn btn-success btn-lg">Add Goal</button>
     </form>
   </div>
 </div>
