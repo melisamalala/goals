@@ -3,7 +3,14 @@ import {Goals} from '../goals';
 
 @Injectable()
 export class GoalService {
-  getGoals(){
+  getGoals() {
     return Goals;
-  }
+
+    getGoal(id); {
+      for (let goal of Goals) {
+          if (goal.id === id) {
+              return goal;
+          }
+      }
+    }
 }
