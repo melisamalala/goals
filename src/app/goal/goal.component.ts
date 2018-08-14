@@ -31,8 +31,8 @@ export class GoalComponent implements OnInit {
 
    ];
 
-   goToUrl(id){
-         this.router.navigate(['/goals',id])
+   goToUrl(id) {
+         this.router.navigate(['/goals', id]);
      }
 
 
@@ -58,7 +58,8 @@ export class GoalComponent implements OnInit {
     // }
 
 
-      constructor(goalService:GoalService, alertService: AlertsService, private http: HttpClient, private quoteService: QuoteRequestService, private router:Router){
+      constructor(goalService: GoalService, alertService: AlertsService, private http: HttpClient,
+         private quoteService: QuoteRequestService, private router: Router) {
       this.goals = goalService.getGoals();
       this.alertService = alertService; // make the service available to the class
        }

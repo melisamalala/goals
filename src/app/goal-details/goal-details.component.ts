@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import {GoalService} from '../goals/goal.service';
 
 
+
 @Component({
   selector: 'app-goal-details',
   templateUrl: './goal-details.component.html',
@@ -19,7 +20,7 @@ export class GoalDetailsComponent implements OnInit {
     this.isComplete.emit(complete);
   }
   constructor(private route: ActivatedRoute,
-    private service: GoalService) { }
+    private service:GoalService) { }
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
